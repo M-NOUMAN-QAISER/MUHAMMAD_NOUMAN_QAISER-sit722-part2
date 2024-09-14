@@ -14,15 +14,15 @@ spec:
     spec:
       containers:
       - name: book-catalog
-        image: book-catalog:1
+        image: book-microservice:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 8081
         env:
         - name: PORT
           value: "8081"
-        - name: DATABASE_URL
-          value: "postgresql://muhammad_nouman_qaiser_agtt_user:CKeTRykOhMc2vIk8WrfwoHEL4gLiWcR5@dpg-cri80fbv2p9s73bm0u00-a/muhammad_nouman_qaiser_agtt"
+        - name: DATABASE_URL  #postgresql+psycopg2://<username>:<password>@<hostname>/<database>
+          value: "postgresql://muhammad_nouman_qaiser_agtt_user:CKeTRykOhMc2vIk8WrfwoHEL4gLiWcR5@dpg-cri80fbv2p9s73bm0u00-a.oregon-postgres.render.com/muhammad_nouman_qaiser_agtt"
 ---
 apiVersion: v1
 kind: Service
